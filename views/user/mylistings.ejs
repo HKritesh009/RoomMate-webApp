@@ -1,0 +1,33 @@
+<% layout("layouts/boilerplate") %>
+
+    <div class="container-fluid">
+        <div class="row">
+                    <!-- Sidebar -->
+            <%- include('sidebar') %>
+            <!-- Main content -->
+            <div class="container mt-4">
+                <h2>My Listings</h2>
+                <% if (Listings.length===0) { %>
+                    <p>You haven't posted any listings yet.</p>
+                    <% } else { %>
+                        <div class="row">
+                            <% Listings.forEach(Listing=> { %>
+                                <div class="col-md-4">
+                                    <div class="card mb-3">
+                                        <img src="<%= Listing.image.url %>" class="card-img-top">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <%= Listing.title %>
+                                            </h5>
+                                            <a href="/listings/<%=Listing._id%>"
+                                                class="btn btn-outline-primary btn-sm">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+                        </div>
+                        <% } %>
+            </div>
+
+        </div>
+    </div>

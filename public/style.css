@@ -1,0 +1,133 @@
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container{
+  flex: 1;
+}
+
+
+.btn{
+  border: none !important;
+ background-color:#0d6efd !important;
+}
+
+
+.navbar{
+    height: 5rem;
+    background-color: aliceblue;
+}
+
+
+.fa-compass{
+    color: rgb(251, 250, 250);
+    height: 2rem;
+}
+
+.nav-link{
+    color: black !important;
+}
+
+.footContainer {
+  background-color: rgb(255, 255, 255);
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.footlogo {
+  font-size: 2rem;
+  color: black;
+}
+
+.footlink {
+  text-decoration: none;
+  color: black;
+}
+
+.footlink:hover {
+  text-decoration: underline;
+}
+
+/* 🌙 Dark Mode Overrides */
+body.dark-mode .footContainer {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+body.dark-mode .footlogo {
+  color: white;
+}
+
+body.dark-mode .footlink {
+  color: #f1f1f1;
+}
+
+body.dark-mode .footlink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
+/* Existing card styles */
+.card {
+  border: none !important;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode for card */
+body.dark-mode .card {
+  background-color:  #121212 !important;
+  color: #ffffff;
+}
+
+/* Image styling (fix typo: 'conver' → 'cover') */
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Center the card */
+.cardonly {
+  display: flex;
+  justify-content: center;
+}
+
+/* Link styling */
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Optional: ensure link inside dark card is light */
+body.dark-mode .listing-link {
+  color: #ffffff;
+}
+
+body.dark-mode .card-title,
+body.dark-mode .card-text {
+  color: #ffffff;
+}
+
+/* card-effect */
+
+.card-img-overlay{
+  opacity:0;
+}
+
+.card-img-overlay:hover{
+   opacity:0.2;
+  background-color: white;
+}
+
+
+
+

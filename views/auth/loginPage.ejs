@@ -1,0 +1,71 @@
+<% layout("layouts/boilerplate") %>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow-lg p-4" style="width: 30rem;">
+    <h2 class="text-center mb-4 fw-bold">Welcome to Wander</h2>
+
+    <% if (messages.error) { %>
+      <div class="alert alert-danger">
+        <%= messages.error[0] %>
+      </div>
+    <% } %>
+    <% if (messages.success) { %>
+      <div class="alert alert-success">
+        <%= messages.success[0] %>
+      </div>
+    <% } %>
+
+    <ul class="nav nav-tabs mb-3" id="authTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">Login</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab">Register</button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- Login Form -->
+      <div class="tab-pane fade show active" id="login" role="tabpanel">
+        <form action="/login" method="POST">
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+      </div>
+
+      <!-- Register Form -->
+      <div class="tab-pane fade" id="register" role="tabpanel">
+        <form action="/register" method="POST">
+          <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Retain tab state on error
+  const activeTab = '<%= messages.error && messages.error[0].includes("exists") ? "register" : "login" %>';
+  const triggerEl = document.querySelector(`#${activeTab}-tab`);
+  if (triggerEl) {
+    new bootstrap.Tab(triggerEl).show();
+  }
+</script>

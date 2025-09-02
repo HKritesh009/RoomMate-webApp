@@ -1,0 +1,30 @@
+<% layout("layouts/boilerplate") %>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <%- include('sidebar') %>
+            <!-- Main content -->
+            <div class="col-md-9 col-lg-10 py-4 px-5">
+                <h2>Welcome, <%= currentUser.username %>!</h2>
+                <p class="lead">This is your dashboard where you can manage your account, listings, and bookings.</p>
+
+                <!-- Sample content card -->
+                <div class="card mt-4">
+                    <div class="card-header">Account Overview</div>
+                    <div class="card-body">
+                        <p><strong>Email:</strong>
+                            <%= currentUser.email %>
+                        </p>
+                        <p><strong>Member since:</strong>
+                            <% if (currentUser.createdAt) { %>
+                                <%= new Date(currentUser.createdAt).toDateString() %>
+                                    <% } else { %>
+                                        Not available
+                                        <% } %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

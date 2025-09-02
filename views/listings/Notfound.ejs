@@ -1,0 +1,31 @@
+<% layout("/layouts/boilerplate") %>
+
+<style>
+  .center-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+</style>
+
+<body>
+  <div class="container center-box">
+    <lottie-player
+      src="https://assets3.lottiefiles.com/packages/lf20_jtbfg2nb.json"
+      background="transparent"
+      speed="1"
+      style="width: 300px; height: 300px;"
+      loop
+      autoplay>
+    </lottie-player>
+
+    <h1 class="mt-3 display-5">Oops! Destination Not Found</h1>
+    <p class="lead">We couldn't find the destination you're looking for. Please search again!</p>
+
+    <!-- <a href="/listings" class="btn btn-outline-primary mt-3">
+      <i class="fa-solid fa-house"></i> Home Page
+    </a> -->
+  </div>
+</body>

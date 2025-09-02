@@ -1,0 +1,30 @@
+<% layout ("/layouts/boilerplate") %>
+    <body>
+        <!-- <form action="/listings/new">
+     <button> Create new List</button>
+    </form> -->
+
+        <div class="row  row-cols-lg-5 row-cols-md-3 row-cols-sl-3">
+            <% for( list of Listings){ %>
+                <a href="/listings/<%=list._id  %>" class="listing-link">
+                    <div class="cardonly">
+                        <div class="card" style="width: 15rem;">
+                            <img src="<%= list.image.url %> " class="card-img-top" alt="currently not available"
+                                style="height: 15rem;">
+                            <div class="card-img-overlay">
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <b>
+                                        <%= list.title %>
+                                    </b>
+                                <p>price : &#8377;<%= list.price ? list.price.toLocaleString('en-IN') : "N/A" %>
+                                </p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <%} %>
+        </div>
+    </body>

@@ -1,0 +1,28 @@
+<% layout("layouts/boilerplate") %>
+
+    <div class="container-fluid">
+        <div class="row">
+          
+              <!-- Sidebar -->
+            <%- include('sidebar') %>
+            <!-- Main content -->
+
+            <div class="container mt-4">
+                <h2>My Profile</h2>
+                <form action="/user/profile?_method=PUT" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control" name="username" value="<%= currentUser.username %>"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" value="<%= currentUser.email %>" disabled>
+                    </div>
+                    <button class="btn btn-primary">Update Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
