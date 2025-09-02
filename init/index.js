@@ -1,18 +1,23 @@
-const mongoose = require("mongoose");
+
 
 const Listing = require("../models/listing.js");
 const initData = require("./data.js");
 
-async function main(){
-    await mongoose.connect("mongodb://127.0.0.1:27017/wander");
+require("dotenv").config();
+const mongoose = require("mongoose");
+
+async function main() {
+    await mongoose.connect(process.env.MONGO_URL);
 }
 
-main().then(()=>{
-    console.log("db connected succesfully");
-})
-.catch((err)=>{
-    console.log("error while connecting");
-})
+main()
+    .then(() => {
+        console.log("Database connected successfully");
+    })
+    .catch((err) => {
+        console.error("Error occurred while connecting to DB:", err);
+    });
+
 
 
 async function initialize(){

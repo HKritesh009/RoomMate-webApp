@@ -1,5 +1,24 @@
 const express = require("express");
+
+
+
+// ✅ Connect to MongoDB   and .env file 
+require("dotenv").config();
 const mongoose = require("mongoose");
+
+async function main() {
+    await mongoose.connect(process.env.MONGO_URL);
+}
+
+main()
+    .then(() => {
+        console.log("Database connected successfully");
+    })
+    .catch((err) => {
+        console.error("Error occurred while connecting to DB:", err);
+    });
+
+
 
 const listings = require("./models/listing.js");
 const User = require("./models/user.js"); // User schema
@@ -56,17 +75,8 @@ app.use((req, res, next) => {
 
 
 
-// ✅ Connect to MongoDB
-async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/wander");
-}
-main()
-    .then(() => {
-        console.log("Database connected successfully");
-    })
-    .catch(() => {
-        console.log("Error occurred while connecting to DB");
-    });
+
+
 
 app.get("/", (req, res) => {
     res.redirect("/listings");
