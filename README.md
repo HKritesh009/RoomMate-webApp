@@ -5,8 +5,8 @@ RoomMate is a full-stack web application built using the **MEN stack** (MongoDB,
 ---
 
 ## Demo
-
-(Optional: Add your deployed app link here, e.g., Render, Vercel, Heroku, etc
+[Visit OpenAI]( https://roommate-webapp-u5ad.onrender.com)
+(Note: Service can be suspended  also for some time)
 
 
 
