@@ -82,11 +82,5 @@ This project is licensed under the MIT License.
 
 ---
 
-If you want, I can also make a **short, catchy version** that highlights the app in **less than one scroll** for GitHub front page—it looks much more professional for visitors.  
-
-Do you want me to do that?
-
----
-
 
 
