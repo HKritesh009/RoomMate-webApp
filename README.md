@@ -5,7 +5,7 @@ RoomMate is a full-stack web application built using the **MEN stack** (MongoDB,
 ---
 
 ## Demo
-[Visit OpenAI]( https://roommate-webapp-u5ad.onrender.com)
+[Visit RoomMATE web app ]( https://roommate-webapp-u5ad.onrender.com)
 (Note: Service can be suspended  also for some time)
 
 
